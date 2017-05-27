@@ -1,0 +1,12 @@
+{
+   "bookticket": {
+      "moviename": "Movie 1",
+      "date": "27/05/2017",
+      "showtime": "11:00AM",
+      "seatno": "3",
+      "fname": "Anuj",
+      "lname": "Walia",
+      "email": "anujwalia@gmail.com",
+      "telno": "7411010010"
+   }
+}
