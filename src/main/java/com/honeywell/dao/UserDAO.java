@@ -1,4 +1,4 @@
-package com.honeywell.hackathon.dao;
+package com.honeywell.dao;
 
 import java.util.ArrayList;
 import java.util.List;

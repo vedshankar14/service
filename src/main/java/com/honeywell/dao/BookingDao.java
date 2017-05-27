@@ -1,4 +1,4 @@
-package com.honeywell.hackathon.dao;
+package com.honeywell.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import org.hibernate.Transaction;
 import com.Bookings;
 import com.SessionHelper;
 
-public class BookingDAO {
+public class BookingDao {
 	public void bookTicket(Bookings bookings) {
 		SessionHelper sessionHelper= new SessionHelper();
 		Session session = sessionHelper.getHibernateSession();
