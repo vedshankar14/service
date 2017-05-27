@@ -1,12 +1,15 @@
 package com.honeywell.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.honeywell.model.BookingDetails;
 import com.honeywell.model.UserDetails;
 import com.honeywell.service.BookingService;
-import org.apache.log4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/service")
@@ -21,8 +24,8 @@ public class BookingController {
     }
 
     @RequestMapping(value = "/bookDetails/", method = RequestMethod.GET)
-    public void getSeats(@RequestParam int id) {
-        bookingService.getSeats(id);
+    public int getSeats(@RequestParam int id) {
+        return bookingService.getSeats(id);
     }
 
     @RequestMapping(value = "/user/", method = RequestMethod.GET)
