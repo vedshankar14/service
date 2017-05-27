@@ -1,5 +1,9 @@
 package com.honeywell.model;
 
-public class TheatreDetails {
+import java.io.Serializable;
 
+public class TheatreDetails implements Serializable{
+	
+	private int theatreId;
+	
 }
