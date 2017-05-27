@@ -11,7 +11,7 @@ public class MovieDetials implements Serializable{
 	private List<String> showtimes;
     private List<Date> dates;
     private List<String> movies;
-    private List<Integer> seatleft;
+    private int seatleft;
 	
     
     public List<String> getShowtimes() {
@@ -32,10 +32,10 @@ public class MovieDetials implements Serializable{
 	public void setMovies(List<String> movies) {
 		this.movies = movies;
 	}
-	public List<Integer> getSeatleft() {
+	public int getSeatleft() {
 		return seatleft;
 	}
-	public void setSeatleft(List<Integer> seatleft) {
+	public void setSeatleft(int seatleft) {
 		this.seatleft = seatleft;
 	}
 	
