@@ -90,11 +90,11 @@ public class ShowDAO {
 	     }
 	    return shows;
 	}
-public static void main(String[] args) {
+/*public static void main(String[] args) {
 	Shows s=new Shows();
 	s.setMovieID("movieID");
 	s.setTheatreId("thertreId");
 	ShowDAO sd=new ShowDAO();
 	sd.addShow(s);
-}
+}*/
 }

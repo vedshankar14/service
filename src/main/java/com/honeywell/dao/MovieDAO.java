@@ -110,7 +110,7 @@ public Movies getMovieById(String movieId) {
      }
     return movies;
 }
-public static void main(String[] args) {
+/*public static void main(String[] args) {
 	Movies m=new Movies();
 	m.setMovieID("movieID");
 	m.setMovieName("Movie 1");
@@ -122,5 +122,5 @@ public static void main(String[] args) {
 	
 	MovieDAO md=new MovieDAO();
 	md.addMovie(m);
-}
+}*/
 }
