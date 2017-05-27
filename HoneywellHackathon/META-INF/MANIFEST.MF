@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: HoneywellHackathon
+Bundle-SymbolicName: HoneywellHackathon
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: HoneywellHackathon.jar,
+ netbeans7.3+mysql/mysql-connector-java-5.1.18-bin.jar
+Export-Package: com,
+ com.honeywell.hackathon.controller,
+ com.honeywell.hackathon.dao,
+ com.honeywell.hackathon.model,
+ com.honeywell.hackathon.service

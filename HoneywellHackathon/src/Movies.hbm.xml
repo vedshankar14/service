@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.Movies" table="Movies">
+		
+        
+<id name="movieID" type="java.lang.String">
+            <column name="movieID" />
+            <generator class="assigned" />
+        </id>
+        <property name="movieName" type="java.lang.String">
+            <column name="movieName" />
+        </property>
+        <property name="showTiming" type="java.lang.String">
+            <column name="showTiming" />
+        </property>
+        <property name="toatalSeats" type="java.lang.Integer">
+            <column name="toatalSeats" />
+        </property>
+        <property name="availableSeats" type="java.lang.Integer">
+            <column name="availableSeats" />
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="price" />
+        </property>
+        <property name="date" type="java.lang.String">
+            <column name="date" />
+        </property>
+        
+        
+        
+   </class>
+</hibernate-mapping>

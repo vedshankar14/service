@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.Shows" table="Shows">
+        <id name="movieID" type="java.lang.String">
+            <column name="movieID" />
+            <generator class="assigned" />
+        </id>
+        <one-to-one name="movieID" class="com.Movies" cascade="save-update"/>
+        <property name="theatreId" type="java.lang.String">
+            <column name="theatreId" />
+        </property>
+        
+   </class>
+</hibernate-mapping>
