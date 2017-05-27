@@ -8,17 +8,17 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.Bookings;
 import com.SessionHelper;
+import com.Shows;
 
-public class BookingDAO {
-	public void bookTicket(Bookings bookings) {
+public class ShowDAO {
+	public void addShow(Shows shows) {
 		SessionHelper sessionHelper= new SessionHelper();
 		Session session = sessionHelper.getHibernateSession();
 		Transaction tx = null;
 	    try {
 	        tx = session.beginTransaction();
-	        session.save(bookings);
+	        session.save(shows);
 	        session.getTransaction().commit();
 	    } catch (HibernateException e1) {
 	    	
@@ -30,14 +30,14 @@ public class BookingDAO {
 	     }
 	}
 
-	public void cancelTiket(String userid) {
+	public void deleteShow(String movieID) {
 		SessionHelper sessionHelper= new SessionHelper();
 		Session session = sessionHelper.getHibernateSession();
 		Transaction tx = null;
 	    try {
 	        tx = session.beginTransaction();
-	        Bookings bookings = (Bookings) session.load(Bookings.class, new String(userid));
-	        session.delete(bookings);
+	        Shows shows = (Shows) session.load(Shows.class, new String(movieID));
+	        session.delete(shows);
 	        session.getTransaction().commit();
 	    } catch (HibernateException e1) {
 	    	
@@ -49,35 +49,15 @@ public class BookingDAO {
 	     }
 	}
 
-	public void updateBooking(Bookings bookings) {
-		SessionHelper sessionHelper= new SessionHelper();
-		Session session = sessionHelper.getHibernateSession();
-		Transaction tx = null;
-		System.out.println("asdasdas");
-		try{
-		tx = session.beginTransaction();
-	    session.update(bookings);
-	    session.getTransaction().commit();
-	       
-	      }catch (HibernateException e1) {
-	    	
-	    	 e1.printStackTrace(); 
-	    		 
-	    	 }
-	      finally {
-	         session.close(); 
-	      }
-	    
-	}
-
-	public List<Bookings> getAllBookings() {
-	    List<Bookings> bookings = new ArrayList<Bookings>();
+	
+	public List<Shows> getAllShows() {
+	    List<Shows> shows = new ArrayList<Shows>();
 	    SessionHelper sessionHelper= new SessionHelper();
 		Session session = sessionHelper.getHibernateSession();
 		Transaction tx = null;
 	    try {
 	        tx = session.beginTransaction();
-	        bookings = session.createQuery("from Bookings").list();
+	        shows = session.createQuery("from Shows").list();
 	    }catch (HibernateException e1) {
 	    	
 	   	 e1.printStackTrace(); 
@@ -86,20 +66,20 @@ public class BookingDAO {
 	     finally {
 	        session.close(); 
 	     }
-	    return bookings;
+	    return shows;
 	}
 
-	public Bookings getBookings(String userid) {
-	    Bookings bookings = null;
+	public Shows getShowById(String movieID) {
+	    Shows shows = null;
 	    SessionHelper sessionHelper= new SessionHelper();
 		Session session = sessionHelper.getHibernateSession();
 		Transaction tx = null;
 	    try {
 	        tx = session.beginTransaction();
-	        String queryString = "from Bookings where userID = :id";
+	        String queryString = "from Shows where movieId = :id";
 	        Query query = session.createQuery(queryString);
-	        query.setString("id", userid);
-	        bookings = (Bookings) query.uniqueResult();
+	        query.setString("id", movieID);
+	        shows = (Shows) query.uniqueResult();
 	    }catch (HibernateException e1) {
 	    	
 	   	 e1.printStackTrace(); 
@@ -108,7 +88,13 @@ public class BookingDAO {
 	     finally {
 	        session.close(); 
 	     }
-	    return bookings;
+	    return shows;
 	}
-
+public static void main(String[] args) {
+	Shows s=new Shows();
+	s.setMovieID("movieID");
+	s.setTheatreId("thertreId");
+	ShowDAO sd=new ShowDAO();
+	sd.addShow(s);
+}
 }
